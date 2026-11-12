@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Étude de marché pour un service numérique de recommandation de livres destiné au réseau de médiathèques de la Creuse.">
+<title>Étude de marché | Médiathèques de la Creuse</title>
+<style>
+:root{--ink:#202b35;--muted:#66727d;--paper:#f5f3ee;--white:#fff;--green:#245b4b;--green2:#dce9df;--gold:#d7a64a;--line:#e5e2da;--blue:#dfe9ef;--shadow:0 18px 50px rgba(32,43,53,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}a{color:inherit}button{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(245,243,238,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:-.04em}.brand span{color:var(--green)}nav{display:flex;gap:18px;align-items:center}nav a{text-decoration:none;color:var(--muted);font-size:.85rem;font-weight:650}nav a:hover{color:var(--green)}.menu{display:none;background:none;border:1px solid var(--line);padding:7px 11px;border-radius:9px}
+.hero{padding:84px 0 70px;background:linear-gradient(120deg,#e7eee7 0%,#f5f3ee 60%,#f0e7d8 100%);border-bottom:1px solid var(--line)}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:800;color:var(--green)}h1{font-size:clamp(2.5rem,6vw,5.2rem);line-height:1.02;letter-spacing:-.065em;max-width:900px;margin:18px 0 22px}h1 em{font-family:Georgia,serif;font-weight:500;color:var(--green)}.lead{font-size:1.15rem;color:#52616b;max-width:760px}.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.pill{border:1px solid #cbd8ce;border-radius:99px;padding:7px 13px;font-size:.8rem;font-weight:700;color:#355548;background:rgba(255,255,255,.45)}
+section{padding:76px 0;border-bottom:1px solid var(--line)}.section-head{display:grid;grid-template-columns:170px 1fr;gap:30px;margin-bottom:35px}.num{font-size:.8rem;color:var(--green);font-weight:850;letter-spacing:.12em}.section-head h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.05em;line-height:1.1;margin:0 0 12px}.section-head p{margin:0;color:var(--muted);max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:23px;box-shadow:0 5px 20px rgba(32,43,53,.025)}.card h3{margin:0 0 9px;font-size:1.05rem}.card p{margin:0;color:var(--muted);font-size:.93rem}.stat{font-size:2.5rem;letter-spacing:-.06em;font-weight:850;color:var(--green);line-height:1.15}.stat small{font-size:.9rem;letter-spacing:0;color:var(--muted);font-weight:650}.note{border-left:4px solid var(--gold);background:#fbf7ed;padding:17px 20px;border-radius:0 12px 12px 0;color:#5d5545;margin-top:20px}
+.table-wrap{overflow-x:auto;background:white;border:1px solid var(--line);border-radius:15px}table{border-collapse:collapse;width:100%;min-width:600px}th,td{text-align:left;padding:14px 17px;border-bottom:1px solid var(--line)}th{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:#faf9f6}td{font-size:.92rem}tr:last-child td{border-bottom:0}.bar-list{display:grid;gap:14px}.bar-row{display:grid;grid-template-columns:145px 1fr 65px;gap:14px;align-items:center;font-size:.9rem}.bar{height:11px;background:#e9ede8;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:99px}.bar-row b{text-align:right}
+.callout{background:var(--green);color:white;border-radius:20px;padding:28px 30px}.callout p{color:#dbe7df;margin:8px 0 0}.callout h3{font-size:1.5rem;letter-spacing:-.03em;margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.tag{display:inline-block;background:var(--green2);color:var(--green);border-radius:99px;padding:4px 10px;font-size:.72rem;font-weight:800;margin-bottom:12px}.tag.gold{background:#f4ead5;color:#80601e}.persona{display:flex;gap:15px;align-items:flex-start}.persona .big{font-size:2rem}.persona h3{margin:0 0 7px}.persona p{margin:0;color:var(--muted);font-size:.92rem}
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{background:white;border:1px solid var(--line);border-radius:16px;padding:20px}.step:before{counter-increment:step;content:"0" counter(step);font-weight:900;color:var(--gold);font-size:1.4rem}.step h3{margin:8px 0}.step p{margin:0;color:var(--muted);font-size:.9rem}
+.flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}.flow div{flex:1;min-width:135px;background:white;border:1px solid var(--line);padding:17px;border-radius:13px;text-align:center;font-weight:700}.flow span{display:block;color:var(--muted);font-size:.78rem;font-weight:500;margin-top:5px}
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:14px}.swot article{border-radius:16px;padding:22px;background:white;border:1px solid var(--line)}.swot h3{margin:0 0 12px}.swot ul{margin:0;padding-left:19px;color:var(--muted)}
+details{background:white;border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin:10px 0}summary{font-weight:750;cursor:pointer}details p{color:var(--muted);margin-bottom:0}
+footer{padding:40px 0 55px;color:var(--muted);font-size:.85rem}.footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.source-list{padding-left:20px;color:var(--muted)}.source-list li{margin:8px 0}.small{font-size:.8rem;color:var(--muted)}.btn{display:inline-block;background:var(--green);color:white;text-decoration:none;padding:11px 17px;border-radius:99px;font-weight:750;margin-top:20px}.btn:hover{background:#174637}
+@media(max-width:800px){nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);padding:16px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.nav.open nav{display:flex}.menu{display:block}.section-head{grid-template-columns:1fr;gap:8px}.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+@media(max-width:540px){.wrap{width:min(100% - 28px,1160px)}.hero{padding:60px 0 48px}.grid,.steps,.swot{grid-template-columns:1fr}.bar-row{grid-template-columns:105px 1fr 48px;gap:8px;font-size:.8rem}.card{padding:19px}.callout{padding:23px}}
+@media print{header,.btn,.menu{display:none!important}body{background:white}.hero,section{padding:35px 0}.card,.step,.swot article{box-shadow:none;break-inside:avoid}a{text-decoration:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav" id="nav"><div class="brand">LECTURES<span>.</span>CREUSE</div><button class="menu" onclick="document.getElementById('nav').classList.toggle('open')">Menu ☰</button><nav>
+<a href="#contexte">Contexte</a><a href="#territoire">Territoire</a><a href="#lecture">Lecture</a><a href="#numerique">Numérique</a><a href="#strategie">Stratégie</a><a href="#coldstart">Cold Start</a><a href="#sources">Sources</a>
+</nav></div></header>
+<main>
+<div class="hero"><div class="wrap">
+<div class="eyebrow">Étude de marché · Projet Data Analyst</div>
+<h1>Réinventer la découverte des livres <em>en Creuse.</em></h1>
+<p class="lead">Étude stratégique pour la création d'un service numérique de recommandation de lectures destiné à un réseau de médiathèques rurales. Comprendre le territoire, ses lecteurs et ses usages numériques pour concevoir un service utile, accessible et capable de renforcer le lien avec les médiathèques.</p>
+<div class="hero-meta"><span class="pill">Territoire : Creuse (23)</span><span class="pill">Projet : recommandation de livres</span><span class="pill">Méthode : étude documentaire</span></div>
+<a class="btn" href="#synthese">Découvrir les enseignements ↓</a>
+</div></div>
+
+<section id="synthese"><div class="wrap">
+<div class="section-head"><div class="num">EN BREF</div><div><h2>Les chiffres clés du marché</h2><p>Quelques repères pour comprendre le potentiel du service et les enjeux d'adoption sur le territoire.</p></div></div>
+<div class="grid">
+<div class="card"><div class="stat">115 527</div><h3>habitants en Creuse</h3><p>Population départementale utilisée comme premier cadrage territorial.</p></div>
+<div class="card"><div class="stat">31,8 %</div><h3>de 65 ans et plus</h3><p>Un public important qui impose une attention particulière à l'accessibilité.</p></div>
+<div class="card"><div class="stat">63 %</div><h3>ont lu au moins 5 livres</h3><p>Indicateur national du baromètre CNL 2025, et non une mesure propre à la Creuse.</p></div>
+<div class="card"><div class="stat">84,2 %</div><h3>équipés d'un smartphone</h3><p>Repère national INSEE 2025, avec de fortes différences selon l'âge et le territoire.</p></div>
+<div class="card"><div class="stat">70 %</div><h3>lisent des romans</h3><p>Part déclarée dans l'enquête nationale CNL 2025.</p></div>
+<div class="card"><div class="stat">8,4 %</div><h3>ont entre 15 et 24 ans</h3><p>Un segment démographique plus réduit, mais stratégique pour renouveler les publics.</p></div>
+</div>
+<div class="note"><strong>À retenir :</strong> ces chiffres combinent des données locales et nationales. Ils servent à orienter les hypothèses de conception, mais ne décrivent pas directement les comportements des seuls habitants de la communauté de communes cliente.</div>
+</div></section>
+
+<section id="contexte"><div class="wrap">
+<div class="section-head"><div class="num">01 · CONTEXTE</div><div><h2>Du constat à la solution</h2><p>Le réseau fictif de médiathèques constate une baisse de fréquentation et souhaite prolonger son service de conseil au-delà de ses lieux physiques.</p></div></div>
+<div class="two">
+<div class="card"><span class="tag gold">Problème métier</span><h3>Une fréquentation en baisse</h3><p>Les médiathèques cherchent à maintenir le lien avec leurs usagers, à mieux valoriser leurs collections et à toucher des habitants qui se déplacent peu ou ne savent pas quoi lire ensuite.</p></div>
+<div class="card"><span class="tag">Réponse envisagée</span><h3>Un outil de recommandation</h3><p>L'utilisateur saisit un livre qu'il a aimé. Le service identifie cet ouvrage et propose d'autres lectures proches, illustrées par leurs couvertures, avec un accès éventuel à leur disponibilité dans le réseau.</p></div>
+</div>
+<h3 style="margin-top:30px">Objectifs de l'étude</h3>
+<div class="grid">
+<div class="card"><h3>Comprendre le marché</h3><p>Décrire la population, ses habitudes de lecture et ses usages numériques.</p></div>
+<div class="card"><h3>Identifier les publics</h3><p>Repérer les segments à fidéliser, à reconquérir ou à attirer.</p></div>
+<div class="card"><h3>Orienter le produit</h3><p>Définir les fonctionnalités et les choix techniques pertinents au lancement.</p></div>
+</div>
+</div></section>
+
+<section id="territoire"><div class="wrap">
+<div class="section-head"><div class="num">02 · TERRITOIRE</div><div><h2>Une population relativement âgée</h2><p>La structure démographique de la Creuse constitue un facteur déterminant pour le positionnement et l'accessibilité du service.</p></div></div>
+<div class="two">
+<div class="card"><h3>Répartition par âge</h3><div class="bar-list">
+<div class="bar-row"><span>Moins de 15 ans</span><div class="bar"><i style="width:12.9%"></i></div><b>12,9 %</b></div>
+<div class="bar-row"><span>15–24 ans</span><div class="bar"><i style="width:8.4%"></i></div><b>8,4 %</b></div>
+<div class="bar-row"><span>25–39 ans</span><div class="bar"><i style="width:13.2%"></i></div><b>13,2 %</b></div>
+<div class="bar-row"><span>40–54 ans</span><div class="bar"><i style="width:17.7%"></i></div><b>17,7 %</b></div>
+<div class="bar-row"><span>55–64 ans</span><div class="bar"><i style="width:16%"></i></div><b>16,0 %</b></div>
+<div class="bar-row"><span>65–79 ans</span><div class="bar"><i style="width:22.1%"></i></div><b>22,1 %</b></div>
+<div class="bar-row"><span>80 ans et +</span><div class="bar"><i style="width:9.7%"></i></div><b>9,7 %</b></div>
+</div></div>
+<div class="card"><div class="stat">31,8 %</div><h3>de la population a 65 ans ou plus</h3><p>Les seniors forment un public démographiquement important. Il faut cependant éviter de supposer qu'ils partagent tous les mêmes pratiques ou le même niveau d'aisance numérique.</p><div class="note">Enjeu produit : lisibilité, navigation simple, aide à la recherche et possibilité d'être accompagné en médiathèque.</div></div>
+</div>
+<div class="table-wrap" style="margin-top:20px"><table><thead><tr><th>Tranche d'âge</th><th>Population estimée</th><th>Part</th><th>Enjeu pour le service</th></tr></thead><tbody>
+<tr><td>Moins de 15 ans</td><td>14 878</td><td>12,9 %</td><td>Découverte jeunesse avec les familles</td></tr><tr><td>15–24 ans</td><td>9 656</td><td>8,4 %</td><td>Attirer avec BD, mangas et expérience mobile</td></tr><tr><td>25–39 ans</td><td>15 263</td><td>13,2 %</td><td>Recherche rapide et recommandations pratiques</td></tr><tr><td>40–54 ans</td><td>20 419</td><td>17,7 %</td><td>Diversité des genres et gain de temps</td></tr><tr><td>55–64 ans</td><td>18 507</td><td>16,0 %</td><td>Accompagner les usages numériques</td></tr><tr><td>65–79 ans</td><td>25 587</td><td>22,1 %</td><td>Accessibilité et fidélisation</td></tr><tr><td>80 ans et plus</td><td>11 217</td><td>9,7 %</td><td>Interface très lisible et accompagnement</td></tr>
+</tbody></table></div>
+<p class="small">Base démographique indicative issue des chiffres INSEE 2023 repris dans le cadrage de l'étude. À vérifier sur le dossier communal exact de la communauté de communes cliente avant diffusion officielle.</p>
+</div></section>
+
+<section id="lecture"><div class="wrap">
+<div class="section-head"><div class="num">03 · LECTURE</div><div><h2>Ce que lisent les Français</h2><p>Les tendances nationales aident à définir les premières catégories de livres à mettre en avant, en attendant une enquête locale auprès des habitants.</p></div></div>
+<div class="two">
+<div class="card"><h3>Genres déclarés dans le baromètre CNL 2025</h3><div class="bar-list">
+<div class="bar-row"><span>Romans</span><div class="bar"><i style="width:70%"></i></div><b>70 %</b></div>
+<div class="bar-row"><span>Livres pratiques</span><div class="bar"><i style="width:52%"></i></div><b>52 %</b></div>
+<div class="bar-row"><span>Histoire</span><div class="bar"><i style="width:46%"></i></div><b>46 %</b></div>
+<div class="bar-row"><span>BD</span><div class="bar"><i style="width:43%"></i></div><b>43 %</b></div>
+<div class="bar-row"><span>Mangas</span><div class="bar"><i style="width:19%"></i></div><b>19 %</b></div>
+</div><p class="small">Résultats nationaux déclaratifs. Les catégories peuvent se recouper.</p></div>
+<div class="card"><h3>Traduction pour le catalogue</h3><ul><li>Proposer un socle riche de romans.</li><li>Valoriser histoire, cuisine, loisirs et jardinage.</li><li>Conserver une offre visible de BD et mangas.</li><li>Ne pas limiter les recommandations à un seul genre.</li></ul><p class="small">Les pourcentages nationaux sont des signaux de marché, pas des quotas à appliquer au fonds local.</p></div>
+</div>
+<div class="note"><strong>Point méthodologique :</strong> un taux national de lecteurs d'un genre ne signifie pas que la même proportion des habitants de la Creuse le lit. Une enquête locale permettra de confirmer ou d'infirmer ces tendances.</div>
+</div></section>
+
+<section id="numerique"><div class="wrap">
+<div class="section-head"><div class="num">04 · NUMÉRIQUE</div><div><h2>L'équipement ne garantit pas l'aisance</h2><p>Un habitant peut aimer lire sans être à l'aise avec un outil en ligne. L'accessibilité numérique est donc une condition de réussite, pas une option.</p></div></div>
+<div class="two">
+<div class="card"><h3>Équipement par âge – repères nationaux</h3><div class="bar-list">
+<div class="bar-row"><span>15–29 ans</span><div class="bar"><i style="width:95.3%"></i></div><b>95,3 %</b></div>
+<div class="bar-row"><span>30–44 ans</span><div class="bar"><i style="width:96.1%"></i></div><b>96,1 %</b></div>
+<div class="bar-row"><span>45–59 ans</span><div class="bar"><i style="width:90.1%"></i></div><b>90,1 %</b></div>
+<div class="bar-row"><span>60–74 ans</span><div class="bar"><i style="width:75.6%"></i></div><b>75,6 %</b></div>
+<div class="bar-row"><span>75 ans et +</span><div class="bar"><i style="width:48.5%"></i></div><b>48,5 %</b></div>
+</div><p class="small">Part équipée d'un smartphone, selon les chiffres nationaux cités dans le cadrage documentaire. Vérifier les tableaux et définitions de l'édition INSEE avant publication.</p></div>
+<div class="card"><h3>Enjeux d'accès en milieu rural</h3><ul><li>Proposer un site responsive, utilisable sur mobile et ordinateur.</li><li>Limiter le poids des pages et des images.</li><li>Éviter les formulaires longs et les parcours complexes.</li><li>Prévoir un accès accompagné sur les postes des médiathèques.</li><li>Vérifier localement la couverture et la qualité de connexion.</li></ul></div>
+</div>
+<h3 style="margin:30px 0 14px">Les cinq dimensions à vérifier sur le territoire</h3>
+<div class="grid">
+<div class="card"><h3>Équipement</h3><p>Ordinateur, smartphone, tablette et accès partagé.</p></div>
+<div class="card"><h3>Connectivité</h3><p>Couverture mobile, fibre, débit et stabilité de la connexion.</p></div>
+<div class="card"><h3>Compétences</h3><p>Capacité à chercher un livre, saisir un titre et suivre un lien.</p></div>
+<div class="card"><h3>Intérêt</h3><p>Envie de recevoir des recommandations personnalisées.</p></div>
+<div class="card"><h3>Passage à l'emprunt</h3><p>Besoin de consulter la disponibilité et de réserver ou emprunter.</p></div>
+<div class="card"><h3>Accompagnement</h3><p>Besoin d'aide humaine, de tutoriels ou d'un accès en médiathèque.</p></div>
+</div>
+</div></section>
+
+<section id="strategie"><div class="wrap">
+<div class="section-head"><div class="num">05 · PUBLICS</div><div><h2>Trois segments prioritaires</h2><p>La segmentation croise le poids démographique local avec les tendances nationales de lecture et les enjeux d'accessibilité numérique.</p></div></div>
+<div class="grid">
+<div class="card"><span class="tag">Fidéliser</span><div class="persona"><div class="big">📚</div><div><h3>Seniors · 65 ans et +</h3><p>Public majeur en volume. Mettre en avant les romans, les livres historiques et pratiques, avec une interface lisible et un accompagnement possible.</p></div></div></div>
+<div class="card"><span class="tag gold">Reconquérir</span><div class="persona"><div class="big">🔎</div><div><h3>Pré-seniors · 55–64 ans</h3><p>Public de transition à accompagner dans les usages numériques. Miser sur la simplicité, la diversité des suggestions et l'accès au catalogue.</p></div></div></div>
+<div class="card"><span class="tag">Attirer</span><div class="persona"><div class="big">📱</div><div><h3>Jeunes · 15–24 ans</h3><p>Segment démographiquement plus réduit. Rendre visibles mangas, BD et romans contemporains, avec un parcours mobile et visuel.</p></div></div></div>
+</div>
+<div class="note">La segmentation n'implique pas que les goûts sont déterminés par l'âge. Les recommandations doivent d'abord partir du livre choisi par l'utilisateur et de ses caractéristiques.</div>
+</div></section>
+
+<section id="besoin"><div class="wrap">
+<div class="section-head"><div class="num">06 · BESOIN</div><div><h2>Une expérience pensée pour déclencher la découverte</h2><p>Le service doit réduire l'effort nécessaire pour trouver sa prochaine lecture et rapprocher la découverte en ligne de l'emprunt réel.</p></div></div>
+<div class="steps">
+<div class="step"><h3>Je saisis un livre</h3><p>L'utilisateur recherche le titre d'un ouvrage qu'il a aimé.</p></div>
+<div class="step"><h3>Le moteur identifie l'ouvrage</h3><p>Il récupère ses métadonnées : auteur, résumé, genre et thèmes.</p></div>
+<div class="step"><h3>Il compare les contenus</h3><p>Le moteur calcule la proximité entre les descriptions des ouvrages.</p></div>
+<div class="step"><h3>Il affiche des suggestions</h3><p>Une sélection de livres similaires apparaît avec les couvertures.</p></div>
+<div class="step"><h3>Je vérifie la disponibilité</h3><p>L'utilisateur consulte le catalogue et les exemplaires disponibles.</p></div>
+<div class="step"><h3>Je passe à l'emprunt</h3><p>La recommandation devient une occasion de visite ou de réservation.</p></div>
+</div>
+<div class="callout" style="margin-top:20px"><h3>La proposition de valeur</h3><p>« Vous avez aimé un livre ? Découvrez facilement votre prochaine lecture et retrouvez-la dans votre réseau de médiathèques. »</p></div>
+</div></section>
+
+<section id="concurrence"><div class="wrap">
+<div class="section-head"><div class="num">07 · ALTERNATIVES</div><div><h2>Se différencier des solutions existantes</h2><p>Le service ne remplace ni le catalogue ni les conseils des bibliothécaires. Il les complète en rendant la découverte disponible à distance.</p></div></div>
+<div class="table-wrap"><table><thead><tr><th>Alternative</th><th>Usage principal</th><th>Différenciation possible</th></tr></thead><tbody>
+<tr><td>Catalogue classique</td><td>Rechercher un titre ou un auteur</td><td>Partir d'un livre aimé pour découvrir des titres proches</td></tr>
+<tr><td>Conseil du bibliothécaire</td><td>Échange et recommandation humaine</td><td>Prolonger le conseil en ligne, à tout moment</td></tr>
+<tr><td>Plateformes de lecture</td><td>Suggestions et avis</td><td>Orienter vers les ouvrages présents dans le réseau local</td></tr>
+<tr><td>Réseaux sociaux littéraires</td><td>Découverte communautaire</td><td>Proposer un parcours simple jusqu'au catalogue et à l'emprunt</td></tr>
+</tbody></table></div>
+</div></section>
+
+<section id="enquete"><div class="wrap">
+<div class="section-head"><div class="num">08 · VALIDATION</div><div><h2>Interroger les habitants avant de développer</h2><p>Les données documentaires formulent des hypothèses. Une enquête locale est nécessaire pour mesurer la demande réelle et adapter le service à la communauté de communes.</p></div></div>
+<div class="two">
+<div class="card"><h3>Questions à poser</h3><ul><li>À quelle fréquence lisez-vous ?</li><li>Quels genres appréciez-vous ?</li><li>Quel appareil utilisez-vous le plus ?</li><li>Consultez-vous le catalogue en ligne ?</li><li>Un outil de recommandations vous intéresserait-il ?</li><li>Souhaitez-vous voir les couvertures et disponibilités ?</li><li>Qu'est-ce qui pourrait vous empêcher de l'utiliser ?</li></ul></div>
+<div class="card"><h3>Mode de collecte</h3><ul><li>Questionnaire en ligne.</li><li>Questionnaire papier en médiathèque.</li><li>Entretiens courts avec les bibliothécaires.</li><li>Échanges avec des habitants éloignés des équipements.</li><li>Échantillon couvrant plusieurs âges et communes.</li></ul></div>
+</div>
+<h3 style="margin-top:28px">Indicateurs à mesurer</h3>
+<div class="grid">
+<div class="card"><h3>Taux d'intérêt</h3><p>Part des répondants intéressés par le service.</p></div><div class="card"><h3>Taux d'équipement</h3><p>Part disposant d'un appareil adapté.</p></div><div class="card"><h3>Aisance numérique</h3><p>Capacité déclarée à utiliser un outil en ligne.</p></div><div class="card"><h3>Intérêt visuel</h3><p>Importance accordée aux couvertures.</p></div><div class="card"><h3>Intérêt catalogue</h3><p>Valeur de la consultation des disponibilités.</p></div><div class="card"><h3>Intention d'essai</h3><p>Probabilité d'utiliser le service après lancement.</p></div>
+</div>
+</div></section>
+
+<section id="swot"><div class="wrap">
+<div class="section-head"><div class="num">09 · SWOT</div><div><h2>Diagnostic stratégique</h2><p>Les facteurs internes et externes à prendre en compte pour le lancement du service.</p></div></div>
+<div class="swot">
+<article><h3>Forces</h3><ul><li>Recommandations personnalisées à partir d'un livre aimé.</li><li>Découverte visuelle grâce aux couvertures.</li><li>Valorisation des collections locales.</li><li>Complémentarité avec le conseil humain.</li></ul></article>
+<article><h3>Faiblesses</h3><ul><li>Pas d'historique utilisateur au démarrage.</li><li>Dépendance à la qualité des métadonnées et des couvertures.</li><li>Besoin d'une interface accessible.</li><li>Disponibilités à synchroniser avec le catalogue.</li></ul></article>
+<article><h3>Opportunités</h3><ul><li>Toucher les habitants à distance.</li><li>Fidéliser les lecteurs existants.</li><li>Attirer de nouveaux publics.</li><li>Améliorer la visibilité des fonds.</li></ul></article>
+<article><h3>Menaces</h3><ul><li>Fracture numérique et difficultés de connexion.</li><li>Faible adoption si le service est complexe.</li><li>Concurrence des plateformes de recommandation.</li><li>Catalogue incomplet ou données obsolètes.</li></ul></article>
+</div>
+</div></section>
+
+<section id="coldstart"><div class="wrap">
+<div class="section-head"><div class="num">10 · COLD START</div><div><h2>De l'étude de marché au moteur de recommandation</h2><p>L'absence d'historique de lecture empêche de s'appuyer immédiatement sur les comportements collectifs. Le contenu des livres devient le premier signal exploitable.</p></div></div>
+<div class="callout"><h3>Choix de départ : recommandation basée sur le contenu</h3><p>Le système compare les caractéristiques textuelles des ouvrages plutôt que les habitudes d'utilisateurs encore inconnues.</p></div>
+<div class="flow" style="margin-top:20px">
+<div>Livre saisi<span>Titre ou recherche</span></div><div>Catalogue<span>Métadonnées et résumé</span></div><div>TF-IDF<span>Vecteurs textuels</span></div><div>KNN<span>Livres les plus proches</span></div><div>Suggestions<span>Couvertures et disponibilité</span></div>
+</div>
+<div class="two" style="margin-top:20px">
+<div class="card"><h3>Phase 1 · Lancement</h3><p>TF-IDF + KNN pour recommander des livres proches selon le résumé, les genres, les thèmes et les mots-clés.</p></div>
+<div class="card"><h3>Phase 2 · Apprentissage</h3><p>Avec le consentement approprié, observer les recherches, clics et interactions pour mieux comprendre les préférences.</p></div>
+<div class="card"><h3>Phase 3 · Approche hybride</h3><p>Combiner les similitudes de contenu et les comportements réels lorsque les données sont suffisamment nombreuses et fiables.</p></div>
+<div class="card"><h3>Rôle de l'étude de marché</h3><p>Prioriser les catégories, anticiper les besoins d'accessibilité et définir les hypothèses à tester. Elle ne remplace pas les données individuelles de lecture.</p></div>
+</div>
+</div></section>
+
+<section id="kpi"><div class="wrap">
+<div class="section-head"><div class="num">11 · PILOTAGE</div><div><h2>Mesurer l'impact après le lancement</h2><p>Le succès ne se limite pas au nombre de recommandations affichées. Il faut mesurer l'adoption, l'utilité et le passage à l'emprunt.</p></div></div>
+<div class="table-wrap"><table><thead><tr><th>Indicateur</th><th>Ce qu'il mesure</th><th>Question métier</th></tr></thead><tbody>
+<tr><td>Utilisateurs actifs</td><td>Adoption du service</td><td>Le service trouve-t-il son public ?</td></tr>
+<tr><td>Recherches effectuées</td><td>Activité et fréquence d'usage</td><td>Les usagers reviennent-ils ?</td></tr>
+<tr><td>Clics sur recommandations</td><td>Attractivité des suggestions</td><td>Les livres proposés intéressent-ils ?</td></tr>
+<tr><td>Consultations de disponibilité</td><td>Intention d'emprunt</td><td>Les usagers vont-ils vers le catalogue ?</td></tr>
+<tr><td>Emprunts après recommandation</td><td>Conversion</td><td>Le service contribue-t-il aux emprunts ?</td></tr>
+<tr><td>Retours des utilisateurs</td><td>Satisfaction et fidélisation</td><td>Le service apporte-t-il une valeur durable ?</td></tr>
+</tbody></table></div>
+<div class="note">Comparer la fréquentation et les emprunts avant/après le lancement, en tenant compte de la saisonnalité et des autres actions menées par les médiathèques. Une évolution observée ne prouve pas à elle seule que l'outil en est la cause.</div>
+</div></section>
+
+<section id="conclusion"><div class="wrap">
+<div class="section-head"><div class="num">12 · CONCLUSION</div><div><h2>Un service numérique au service de la lecture locale</h2><p>Les données démographiques et les tendances nationales suggèrent un intérêt à explorer pour un service de recommandation, à condition de valider la demande auprès du public réellement desservi.</p></div></div>
+<div class="callout"><h3>La stratégie recommandée</h3><p>Fidéliser les lecteurs existants, faciliter l'accès aux collections, reconquérir les publics moins présents et attirer les jeunes grâce à une expérience numérique simple, visuelle et reliée au catalogue local.</p></div>
+<p style="font-size:1.05rem;margin-top:24px">Le projet relie ainsi trois dimensions : un enjeu métier (la fréquentation), une compréhension du marché (les publics, la lecture et le numérique) et une réponse technique (un moteur de recommandation par contenu pour dépasser le Cold Start).</p>
+</div></section>
+
+<section id="sources"><div class="wrap">
+<div class="section-head"><div class="num">SOURCES</div><div><h2>Références et précautions</h2><p>Les sources doivent être vérifiées et citées précisément dans la version finale remise au client.</p></div></div>
+<ol class="source-list">
+<li><strong>INSEE</strong> – Dossier complet du département de la Creuse, recensement de la population 2023 : démographie et structure par âge. <a href="https://www.insee.fr/fr/statistiques/2011101?geo=DEP-23" target="_blank" rel="noopener">Consulter le dossier Creuse</a>.</li>
+<li><strong>Centre national du livre / Ipsos</strong> – Baromètre « Les Français et la lecture », édition 2025 : pratiques et genres de lecture. <a href="https://centrenationaldulivre.fr/" target="_blank" rel="noopener">Site du CNL</a>.</li>
+<li><strong>INSEE</strong> – Enquête Technologies de l'information et de la communication auprès des ménages : équipement et usages numériques. <a href="https://www.insee.fr/" target="_blank" rel="noopener">Site de l'INSEE</a>.</li>
+<li><strong>Arcep</strong> – Baromètre du numérique : équipement, connectivité et usages. <a href="https://www.arcep.fr/" target="_blank" rel="noopener">Site de l'Arcep</a>.</li>
+<li><strong>Département de la Creuse</strong> – Documents de politique publique et de lecture publique, à consulter pour les données propres au réseau. <a href="https://www.creuse.fr/" target="_blank" rel="noopener">Site du Département</a>.</li>
+</ol>
+<div class="note"><strong>Limite importante :</strong> certains chiffres détaillés repris dans ce document proviennent du cadrage préparatoire et doivent être contrôlés dans les tableaux sources originaux avant publication. Les données nationales ne doivent pas être présentées comme des résultats propres à la Creuse. Le périmètre exact de la communauté de communes cliente doit aussi être précisé : les chiffres départementaux ne sont pas automatiquement représentatifs de son bassin de population.</div>
+</div></section>
+</main>
+<footer><div class="wrap footer-grid"><div><strong>LECTURES.CREUSE</strong><br>Étude de marché · Projet fictif de médiathèques</div><div>Document de travail · Novembre 2026<br>Conçu pour une présentation web responsive</div><div><a href="#" onclick="window.print();return false">Imprimer / enregistrer en PDF</a></div></div></footer>
+</body></html>
